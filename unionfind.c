@@ -79,16 +79,16 @@ void unionfind_union(UNIONFIND* uf, int el1, int el2){
         return;
     } else if(uf->rank[root1] < uf->rank[root2]){
         uf->parent[root1] = root2;
-        uf->treeSize[root1] += uf->treeSize[root2];
+        uf->treeSize[root2] += uf->treeSize[root1];
         uf->setCount--;
     } else if(uf->rank[root1] > uf->rank[root2]){
         uf->parent[root2] = root1;
-        uf->treeSize[root2] += uf->treeSize[root1];
+        uf->treeSize[root1] += uf->treeSize[root2];
         uf->setCount--;
     } else {
         uf->parent[root1] = root2;
         uf->rank[root1]++;
-        uf->treeSize[root1] += uf->treeSize[root2];
+        uf->treeSize[root2] += uf->treeSize[root1];
         uf->setCount--;
     }
 }
