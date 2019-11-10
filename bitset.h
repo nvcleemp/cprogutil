@@ -25,6 +25,7 @@ typedef unsigned long long int bitset;
 #define BS_ADD_ALL(s, elements) ((s) |= (elements))
 #define BS_UNION(s1, s2) ((s1) | (s2))
 #define BS_INTERSECTION(s1, s2) ((s1) & (s2))
+#define BS_SYMMETRIC_DIFFERENCE(s1, s2) ((s1) ^ (s2))
 //these will only work if the element is actually in the set
 #define BS_REMOVE(s, el) ((s) ^= BS_SINGLETON(el))
 #define BS_REMOVE_ALL(s, elements) ((s) ^= (elements))
